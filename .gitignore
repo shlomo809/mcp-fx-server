@@ -1,0 +1,25 @@
+# env
+.env
+*.env
+
+# python / build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+dist/
+build/
+
+# venvs
+.venv/
+.uv-cache/
+.uv/
+.cache/
+
+# pytest
+.pytest_cache/
+
+# OS/files
+.DS_Store
+Thumbs.db
