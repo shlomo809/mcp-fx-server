@@ -9,7 +9,7 @@ from mcp.server.fastmcp import FastMCP
 from pydantic import validate_call
 
 from app.cache import TTLCache
-from app.logging import setup_logging
+from app.logging_conf import setup_logging
 from app.provider import fetch_rate
 from app.schemas import (
     ConvertResponse,
