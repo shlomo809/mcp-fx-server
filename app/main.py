@@ -5,13 +5,12 @@ import logging
 import os
 from typing import Any
 
+from cache import TTLCache
+from logging_conf import setup_logging
 from mcp.server.fastmcp import FastMCP
+from provider import fetch_rate
 from pydantic import validate_call
-
-from app.cache import TTLCache
-from app.logging_conf import setup_logging
-from app.provider import fetch_rate
-from app.schemas import (
+from schemas import (
     ConvertResponse,
     Currency,
     NonNegativeAmount,
