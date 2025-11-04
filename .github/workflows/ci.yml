@@ -20,5 +20,7 @@ jobs:
         run: uv run black --check .
       - name: Mypy
         run: uv run mypy .
+      - name: Pre-commit
+        run: uv run pre-commit run --all-files
       - name: Pytest
         run: uv run pytest -q

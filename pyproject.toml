@@ -1,19 +1,51 @@
 [project]
 name = "mcp-fx-server"
 version = "0.1.0"
-description = "Add your description here"
+description = "MCP server for live FX rates"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12,<3.14"
 dependencies = [
-    "httpx>=0.28.1",
-    "mcp>=1.20.0",
-    "pydantic>=2.12.3",
+  "httpx==0.28.1",
+  "mcp==1.20.0",
+  "pydantic==2.12.3",
 ]
 
 [dependency-groups]
 dev = [
-    "black>=25.9.0",
-    "mypy>=1.18.2",
-    "pytest>=8.4.2",
-    "ruff>=0.14.3",
+  "black==25.9.0",
+  "mypy==1.18.2",
+  "pre-commit==3.8.0",
+  "pytest==8.4.2",
+  "ruff==0.14.3",
 ]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+fix = true
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "Q", "B", "C90", "PIE"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+check_untyped_defs = true
+pretty = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["."]
